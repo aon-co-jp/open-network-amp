@@ -8,7 +8,7 @@ V = {"p32s": c["p_max"](32, False), "p32b": c["p_max"](32, True), "p300b": c["p_
 LANG8 = ["ja", "en", "en-GB", "ru", "uk", "de", "it", "fr"]
 NAME8 = {"ja": "日本語", "en": "English (US)", "en-GB": "English (UK)", "ru": "Русский", "uk": "Українська", "de": "Deutsch", "it": "Italiano", "fr": "Français"}
 TITLE = {
- "ja": "HP-VER3 — ゲイン調整 (1dB 刻み・3 モード・スピーカー用とヘッドホン用の 2 個) つきヘッドホンアンプ (前面に 3.5mm・4.4mm・6.35mm・XLR (ステレオ 4 ピン + モノラル 3 ピン ×2)、ゲイン調整つき) — 通常プリメインアンプと AV アンプの両方に搭載",
+ "ja": "HP-VER3 — ゲインと音量の調整 (各 1dB 刻み・3 モード・スピーカー出力とヘッドホン出力の両方) つきヘッドホンアンプ (前面に 3.5mm・4.4mm・6.35mm・XLR (ステレオ 4 ピン + モノラル 3 ピン ×2)、ゲイン調整つき) — 通常プリメインアンプと AV アンプの両方に搭載",
  "en": "HP-VER3 — headphone amplifier (front-panel 3.5 mm, 4.4 mm, 6.35 mm and XLR (stereo 4-pin plus two mono 3-pin), with gain adjustment) for both the regular integrated amplifiers and the AV amplifier",
  "ru": "HP-VER3 — усилитель для наушников (на передней панели 3,5 мм, 4,4 мм, 6,35 мм и XLR (стерео 4-контактный и два моно 3-контактных), с регулировкой усиления) для обычных усилителей и AV-усилителя",
  "uk": "HP-VER3 — підсилювач для навушників (на передній панелі 3,5 мм, 4,4 мм, 6,35 мм і XLR (стерео 4-контактний і два моно 3-контактних), з регулюванням підсилення) для звичайних підсилювачів і AV-підсилювача",
@@ -116,12 +116,12 @@ def compose(fn, keys, heading):
     p = panel(keys, heading)
     im = Image.new("RGB", (W, fig.height + p.height), "white"); im.paste(fig, (0, 0)); im.paste(p, (0, fig.height))
     im.save(D + "/" + fn, "JPEG", quality=88, dpi=(300, 300)); print(fn, im.size)
-compose("amp_gain3.jpg", ["g3", "rest"], "HP-VER3 ゲイン調整 (1dB 刻み・3 モード・2 個) — 説明 / Explanation (8 languages)")
+compose("amp_gain3.jpg", ["g3", "rest"], "HP-VER3 ゲインと音量の調整 — 説明 / Explanation (8 languages)")
 compose("amp_gain3_sim.jpg", ["g3sim", "g3"], "HP-VER3 ゲイン調整の仮想シミュレーション — 説明 / Explanation (8 languages)")
 man = panel(["title", "g3", "g3sim", "jacks", "sw", "pin", "rest"], "HP-VER3 説明書 / Manual (8 languages)")
 man.save(D + "/manual-hp3.jpg", "JPEG", quality=90, dpi=(300, 300)); man.save(D + "/manual-hp3.pdf", resolution=300)
 md = ["# HP-VER3 — %s\n" % TITLE["ja"], "\n> Translation note / 翻訳について: the non-Japanese texts were written by an AI and have NOT been checked by human native speakers. 日本語以外の文章は AI が書いたもので、ネイティブスピーカー (人間) による確認は未実施です。\n",
-      "Figures: `amp_gain3.jpg` (gain control: 1 dB steps, three modes, two independent controls for the speaker and the headphone outputs), `amp_gain3_sim.jpg` (virtual simulation), each with the 8-language explanation below; bare figures in `figures-only/`; `manual-hp3.jpg` / `manual-hp3.pdf`; `headphone-hp3-all.pdf`. Reference design, Python calculations, not bench measurements.\n"]
+      "Figures: `amp_gain3.jpg` (gain and volume control in 1 dB steps with three modes, on both the speaker and the headphone outputs: four controls), `amp_gain3_sim.jpg` (virtual simulation), each with the 8-language explanation below; bare figures in `figures-only/`; `manual-hp3.jpg` / `manual-hp3.pdf`; `headphone-hp3-all.pdf`. Reference design, Python calculations, not bench measurements.\n"]
 for L in LANG8:
     md.append("## %s\n" % NAME8[L]); md.append("**%s**\n" % dec(L, TITLE[L]))
     for k in ("g3", "g3sim", "jacks", "sw", "pin", "rest"):

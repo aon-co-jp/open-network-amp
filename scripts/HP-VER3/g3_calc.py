@@ -43,3 +43,23 @@ if __name__ == "__main__":
     for n, st in (("analog", analog_state), ("mixed", mixed_state)):
         t, _ = toggles(st)
         print(n, "relay life at 1000 steps/day", round(relay_years(t, 1000), 1), "y")
+
+
+# ---------------------------------------------------------------- volume (attenuation 0..-90 dB in 1 dB steps)
+VCOARSE_W = (6, 12, 24, 48)                       # coarse attenuator relays (dB)
+def vol_analog_state(a):
+    c = (a // 6)
+    coarse = tuple((c >> i) & 1 for i in range(4))
+    return coarse + FINE[a % 6]
+def vol_mixed_state(a):
+    c = (a // 6)
+    return tuple((c >> i) & 1 for i in range(4))
+def vol_toggles(fn, hi=90):
+    t = [sum(x != y for x, y in zip(fn(a), fn(a + 1))) for a in range(0, hi)]
+    return sum(t) / len(t), max(t)
+def vol_bits(att, mode, width=32):
+    if mode == "analog":
+        return width
+    if mode == "digital":
+        return width - att / 6.02
+    return width - (att % 6) / 6.02
