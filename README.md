@@ -29,6 +29,7 @@ Languages: [日本語](#ja) · [English](#en) · [Deutsch](#de) · [Русски
 
 #### 6. 注意
 - 参考設計です。部品値は机上計算で、シミュレーションは Python の計算までです。過渡応答・歪み (THD)・実機の雑音と位相・触覚の感触は未実施で、安全規格・認証の確認が必要です。
+- 電源トランスはトロイダルを左右独立の 2 台にして、静電シールド・ミューメタル缶・商用 DC ブロッカを併用します。
 - 耐久性: 大容量の電解コンデンサは外付け電源に置き (45°C 以下)、Class AB の出力素子は 2 並列、Class A は温度制御ファンつきです。リレー式ボリュームは 1 日 500 回で約 55 年、真空管は約 10,000 時間です。ヘッドホンジャックは交換できるサブ基板に付けます。
 - 外付けリニア電源 (アナログ版) には高電圧 (B+ 250V) と大電流があります。取り扱いに注意してください。
 
@@ -58,6 +59,7 @@ Languages: [日本語](#ja) · [English](#en) · [Deutsch](#de) · [Русски
 
 #### 6. Notes
 - Reference designs. The component values are on paper and the simulation is Python calculation only. Transient response, THD, real noise and phase, and the haptic feel have not been checked, and safety standards and certification must be checked.
+- The power transformers are two independent toroids (one per channel) with an electrostatic shield, a mu-metal can and a mains DC blocker.
 - Durability: the large electrolytic capacitors sit in the external supply (45 C or below), the Class AB output devices are doubled in parallel and Class A has a temperature-controlled fan. The relay volume lasts about 55 years at 500 operations a day and a tube about 10,000 hours. The headphone jacks sit on a replaceable sub-board.
 - The external linear supply of the analog versions carries high voltage (B+ 250 V) and high current. Handle it with care.
 
@@ -87,6 +89,7 @@ Languages: [日本語](#ja) · [English](#en) · [Deutsch](#de) · [Русски
 
 #### 6. Hinweise
 - Referenzentwürfe. Die Bauteilwerte sind rechnerisch, die Simulation besteht nur aus Python-Berechnungen. Einschwingverhalten, Klirrfaktor (THD), echtes Rauschen und Phase sowie das haptische Gefühl wurden nicht geprüft; Sicherheitsnormen und Zertifizierung müssen geprüft werden.
+- Die Netztransformatoren sind zwei unabhängige Ringkerne (je Kanal) mit elektrostatischer Schirmung, Mu-Metall-Becher und Netz-Gleichstromblocker.
 - Haltbarkeit: Die großen Elektrolytkondensatoren sitzen im externen Netzteil (45 °C oder weniger), die Klasse-AB-Endtransistoren sind doppelt parallel geschaltet, und Klasse A hat einen temperaturgeregelten Lüfter. Der Relais-Lautstärkeregler hält bei 500 Bedienungen pro Tag etwa 55 Jahre, eine Röhre etwa 10.000 Stunden. Die Kopfhörerbuchsen sitzen auf einer austauschbaren Unterplatine.
 - Das externe lineare Netzteil der Analogversionen führt Hochspannung (B+ 250 V) und hohe Ströme. Mit Vorsicht behandeln.
 
@@ -116,6 +119,7 @@ Languages: [日本語](#ja) · [English](#en) · [Deutsch](#de) · [Русски
 
 #### 6. Примечания
 - Это справочные проекты. Номиналы деталей расчётные, моделирование ограничено расчётами на Python. Переходные процессы, искажения (THD), реальный шум и фаза, а также тактильные ощущения не проверялись; необходимо проверить стандарты безопасности и сертификацию.
+- Сетевые трансформаторы — два независимых тороидальных (по одному на канал) с электростатическим экраном, экраном из мю-металла и блокиратором постоянного тока.
 - Долговечность: крупные электролитические конденсаторы стоят во внешнем блоке питания (45 °C или ниже), выходные транзисторы класса AB удвоены параллельно, а у класса A есть вентилятор с температурным управлением. Релейный регулятор громкости служит около 55 лет при 500 операциях в день, лампа около 10 000 часов. Разъёмы наушников стоят на сменной подплате.
 - Внешний линейный блок питания аналоговых версий содержит высокое напряжение (B+ 250 В) и большие токи. Обращайтесь осторожно.
 
@@ -130,7 +134,7 @@ Languages: [日本語](#ja) · [English](#en) · [Deutsch](#de) · [Русски
 - [VER2](VER2) — shorter wiring, virtual simulation, subwoofer VER2
 - [VER3](VER3) — sound-quality review, haptic hybrid volume, LR4 subwoofer
 - [VER4](VER4) — headphone amplifier (3.5 / 4.4 / 6.35 mm), ANALOG/DIGITAL gain
-- [VER5](VER5) — latest: 4-language (JA/EN/DE/RU) text in the figures, durability review, manual (`VER5/manual`)
+- [VER5](VER5) — latest (toroidal dual-mono transformers): 4-language (JA/EN/DE/RU) text in the figures, durability review, manual (`VER5/manual`)
 
 Each VER folder contains `streaming-amp`, `analog-amp` and `mono-sub-out` (JPG + PDF).
 Home page: https://audiocafe.tokyo/
