@@ -2,7 +2,7 @@
 
 > Translation note / 翻訳について: the non-Japanese texts were written by an AI and then proofread by independent AI reviewers for each language (corrections applied). They have NOT been checked by human native speakers; corrections from native speakers are welcome (open an issue). 日本語以外の文章は AI が書き、言語ごとに別の AI が校閲して直しましたが、ネイティブスピーカー (人間) による確認は未実施です。ご指摘を歓迎します。
 
-Figures: `amp_ver7_sim.jpg` (test / debug, 5 rounds), `amp_ver7_classA_AB.jpg` (Class A + AB), `amp_ver7_classA.jpg` (Class A), `manual-v7.jpg` / `manual-v7.pdf` (8-language manual), `amp_ver7_all.pdf`. The tube version uses `../VER6/amp_ver6_tube.jpg`; the improved Class D uses `../classd-analog/CD-VER2` and `../VER6/amp_ver6_classD.jpg`.
+Figures: `amp_ver7_sim.jpg` (test / debug, 5 rounds), `amp_ver7_classA.jpg` (Class A), `amp_ver7_classA_AB.jpg` (Class A + AB, automatic), `amp_ver7_classAB.jpg` (Class AB, 100 W), `amp_ver7_classD.jpg` (improved analog Class D; details in `../classd-analog/CD-VER2`), `amp_ver7_tube_AB.jpg` (valve preamp + Class AB), `amp_ver7_tube_A_AB.jpg` (valve preamp + Class A + AB), `amp_ver7_tube_D.jpg` (valve preamp + analog Class D), `amp_ver7_tube.jpg` (valve preamp + Class A), `manual-v7.jpg` / `manual-v7.pdf` (8-language manual), `amp_ver7_all.pdf`.
 
 ## 日本語
 

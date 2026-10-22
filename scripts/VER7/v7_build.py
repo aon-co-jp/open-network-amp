@@ -32,9 +32,7 @@ def _dec(L, t):
 OUT = SD + r"\v7out"
 os.makedirs(OUT, exist_ok=True)
 # README in 8 languages
-md = ["# VER7 — %s
-" % TITLE["ja"], "Figures: `amp_ver7_sim.jpg` (test / debug, 5 rounds), `amp_ver7_classA.jpg` (Class A), `amp_ver7_classA_AB.jpg` (Class A + AB, automatic), `amp_ver7_classAB.jpg` (Class AB, 100 W), `amp_ver7_classD.jpg` (improved analog Class D; details in `../classd-analog/CD-VER2`), `amp_ver7_tube_AB.jpg` (valve preamp + Class AB), `amp_ver7_tube.jpg` (valve preamp + Class A), `manual-v7.jpg` / `manual-v7.pdf` (8-language manual), `amp_ver7_all.pdf`.
-"]
+md = ["# VER7 — %s\n" % TITLE["ja"], "Figures: `amp_ver7_sim.jpg` (test / debug, 5 rounds), `amp_ver7_classA.jpg` (Class A), `amp_ver7_classA_AB.jpg` (Class A + AB, automatic), `amp_ver7_classAB.jpg` (Class AB, 100 W), `amp_ver7_classD.jpg` (improved analog Class D; details in `../classd-analog/CD-VER2`), `amp_ver7_tube_AB.jpg` (valve preamp + Class AB), `amp_ver7_tube_A_AB.jpg` (valve preamp + Class A + AB), `amp_ver7_tube_D.jpg` (valve preamp + analog Class D), `amp_ver7_tube.jpg` (valve preamp + Class A), `manual-v7.jpg` / `manual-v7.pdf` (8-language manual), `amp_ver7_all.pdf`.\n"]
 for L in LANG8:
     md.append("## %s\n" % NAME8[L])
     md.append("**%s**\n" % TITLE[L])
