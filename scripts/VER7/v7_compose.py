@@ -23,6 +23,8 @@ bx = {}
 exec(open(SD + "/v7b_texts.py", encoding="utf-8").read().replace('if __name__ == "__main__":', 'if False:'), bx)
 for k in bx["R"]:
     IT["R" + k] = {L: (bx["R"][k][L] % bx["V"] if "%(" in bx["R"][k][L] else bx["R"][k][L]).replace("%%", "%") for L in LANG8}
+exec(open(SD + "/v7_hpstrip.py", encoding="utf-8").read())
+IT["HPI"] = HPI
 FIGS = {
  "amp_ver7b_sim.jpg": ("追加の仮想シミュレーション TEST 6-10 / Additional simulation", ["R1", "R2", "R3", "R4", "R5", "R6"]),  # file -> (title key text, items)
  "amp_ver7_classA.jpg": ("A級 / Class A", ["need", "A", "V", "C", "N"]),
@@ -65,6 +67,12 @@ for fn, (ttl, keys) in FIGS.items():
         shutil.copy(os.path.join(D, fn), orig)         # keep the figure without the explanation
     fig = Image.open(orig).convert("RGB")
     fig = fig.resize((W, int(fig.height * W / fig.width)))
+    if fn in SRC:                                             # add the headphone-amplifier strip under each version's schematic
+        strip = hp_strip(fn, W)
+        both = Image.new("RGB", (W, fig.height + strip.height), "white")
+        both.paste(fig, (0, 0)); both.paste(strip, (0, fig.height))
+        fig = both
+        keys = [k for k in keys] + ["HPI"] if "HPI" not in keys else keys
     blocks = []
     for L in LANG8:
         lines = [(NAME8[L], HD)]
