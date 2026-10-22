@@ -136,6 +136,7 @@ Languages: [日本語](#ja) · [English](#en) · [Deutsch](#de) · [Русски
 - [VER4](VER4) — headphone amplifier (3.5 / 4.4 / 6.35 mm), ANALOG/DIGITAL gain
 - [VER5](VER5) — latest (toroidal dual-mono transformers): 4-language (JA/EN/DE/RU) text in the figures, durability review, manual (`VER5/manual`)
 - [VER6](VER6) — shorter wiring (45 mm path, ground plane, 2 mm decoupling) and a more durable hybrid volume knob (VER5 + delta)
+- [surround-av-amp/SV-VER1](surround-av-amp/SV-VER1) — new: surround AV amplifier (fully balanced and unbalanced, 11.2.4, mono subwoofer outputs, tactile outputs)
 
 Each VER folder contains `streaming-amp`, `analog-amp` and `mono-sub-out` (JPG + PDF).
 Home page: https://audiocafe.tokyo/
