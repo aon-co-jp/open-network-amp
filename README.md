@@ -137,6 +137,7 @@ Languages: [日本語](#ja) · [English](#en) · [Deutsch](#de) · [Русски
 - [VER5](VER5) — latest (toroidal dual-mono transformers): 4-language (JA/EN/DE/RU) text in the figures, durability review, manual (`VER5/manual`)
 - [VER6](VER6) — shorter wiring (45 mm path, ground plane, 2 mm decoupling) and a more durable hybrid volume knob (VER5 + delta)
 - Surround AV amplifier: see the new repository [open-av-amp](https://github.com/aon-co-jp/open-av-amp)
+- [VER7](VER7) — quiet-to-practical volume for a 12-tatami room: Class A (9 W) and tube versions, Class A + AB version (automatic), improved analog Class D; manual in 8 languages (JA, EN-US, EN-UK, RU, UK, DE, IT, FR)
 - [classd-analog/CD-VER2](classd-analog/CD-VER2) — analog-input Class D amplifier with external linear DC supply, reviewed for durability, sound and shorter wiring (CD-VER1 = VER6 Class D figure)
 
 Each VER folder contains `streaming-amp`, `analog-amp` and `mono-sub-out` (JPG + PDF).
