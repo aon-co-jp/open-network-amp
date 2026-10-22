@@ -4,6 +4,8 @@
 
 Figures: `amp_ver7_sim.jpg` (test / debug, 5 rounds), `amp_ver7_classA.jpg` (Class A), `amp_ver7_classA_AB.jpg` (Class A + AB, automatic), `amp_ver7_classAB.jpg` (Class AB, 100 W), `amp_ver7_classD.jpg` (improved analog Class D; details in `../classd-analog/CD-VER2`), `amp_ver7_tube_AB.jpg` (valve preamp + Class AB), `amp_ver7_tube_A_AB.jpg` (valve preamp + Class A + AB), `amp_ver7_tube_D.jpg` (valve preamp + analog Class D), `amp_ver7_tube.jpg` (valve preamp + Class A), `manual-v7.jpg` / `manual-v7.pdf` (8-language manual), `amp_ver7_all.pdf`.
 
+> Each `amp_ver7_*.jpg` now contains the schematic on top and the explanation in 8 languages below it; the bare schematics are in `figures-only/`. The `amp_ver7_classA_AB.jpg` and `amp_ver7_tube_D.jpg` circuits were redrawn from scratch with sound improvements (cascode VAS, DC servo and RFI filter; constant-current loads for the valve stages; analog-input Class D power stage). 各 JPG は上に設計図、下に 8 言語の説明が入っています (設計図だけは `figures-only/`)。A級+AB級と真空管プリ+クラスD の回路は音質改善して描き直しました。
+
 ## 日本語
 
 **VER7 — 小音量から実用音量まで: A級版・真空管版、A級+AB級版、改良クラスDアナログ版**
