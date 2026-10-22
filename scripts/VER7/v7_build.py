@@ -31,14 +31,24 @@ def _dec(L, t):
     return _re.sub(r"(?<=\d)\.(?=\d)", ",", t) if L in ("ru", "uk", "de", "it", "fr") else t
 OUT = SD + r"\v7out"
 os.makedirs(OUT, exist_ok=True)
+b = {}
+exec(open(SD + "/v7b_texts.py", encoding="utf-8").read().replace('if __name__ == "__main__":', 'if False:'), b)
+RB, VB = b["R"], b["V"]
+def rb(L, k):
+    t = RB[k][L] % VB if "%(" in RB[k][L] else RB[k][L]
+    return _dec(L, t.replace("%%", "%"))
 # README in 8 languages
-md = ["# VER7 — %s\n" % TITLE["ja"], "Figures: `amp_ver7_sim.jpg` (test / debug, 5 rounds), `amp_ver7_classA.jpg` (Class A), `amp_ver7_classA_AB.jpg` (Class A + AB, automatic), `amp_ver7_classAB.jpg` (Class AB, 100 W), `amp_ver7_classD.jpg` (improved analog Class D; details in `../classd-analog/CD-VER2`), `amp_ver7_tube_AB.jpg` (valve preamp + Class AB), `amp_ver7_tube_A_AB.jpg` (valve preamp + Class A + AB), `amp_ver7_tube_D.jpg` (valve preamp + analog Class D), `amp_ver7_tube.jpg` (valve preamp + Class A), `manual-v7.jpg` / `manual-v7.pdf` (8-language manual), `amp_ver7_all.pdf`.\n"]
+md = ["# VER7 — %s\n" % TITLE["ja"], "Figures: `amp_ver7_sim.jpg` (test / debug, 5 rounds), `amp_ver7b_sim.jpg` (additional tests 6-10 on the redrawn circuits), `amp_ver7_classA.jpg` (Class A), `amp_ver7_classA_AB.jpg` (Class A + AB, automatic), `amp_ver7_classAB.jpg` (Class AB, 100 W), `amp_ver7_classD.jpg` (improved analog Class D; details in `../classd-analog/CD-VER2`), `amp_ver7_tube_AB.jpg` (valve preamp + Class AB), `amp_ver7_tube_A_AB.jpg` (valve preamp + Class A + AB), `amp_ver7_tube_D.jpg` (valve preamp + analog Class D), `amp_ver7_tube.jpg` (valve preamp + Class A), `manual-v7.jpg` / `manual-v7.pdf` (8-language manual), `amp_ver7_all.pdf`.\n"]
 for L in LANG8:
     md.append("## %s\n" % NAME8[L])
     md.append("**%s**\n" % TITLE[L])
     md.append(INTRO[L] + "\n")
     for k in ("need", "A", "V", "H", "D", "C", "N"):
         md.append("- " + _dec(L, IT[k][L]))
+    md.append("")
+    md.append("**TEST 6-10 (`amp_ver7b_sim.jpg`)**\n")
+    for k in ("1", "2", "3", "4", "5", "6"):
+        md.append("- " + rb(L, k))
     md.append("")
 open(OUT + r"\README.md", "w", encoding="utf-8").write("\n".join(md))
 # manual image

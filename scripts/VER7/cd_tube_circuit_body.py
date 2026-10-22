@@ -38,7 +38,7 @@ line([(76, 80.8 + y0), (76, 79 + y0)], ANA)
 gnd(76, 79 + y0)
 line([v1["K"], (70, 50 + y0)], ANA)
 dot(70, 50 + y0, ANA)
-res(70, 46 + y0, "R4", "1k", ANA, vertical=True)
+res(70, 46 + y0, "R4", "3.3k", ANA, vertical=True)
 line([(70, 42 + y0), (70, 41.5 + y0)], ANA)
 gnd(70, 41.5 + y0)
 line([(70, 70 + y0), (80, 70 + y0)], ANA)
@@ -66,23 +66,25 @@ line([(120, 50 + y0), (126.4, 50 + y0)], ANA)
 circ(128, 50 + y0, 1.6, INK)
 text(128, 54.5 + y0, "PRE OUT", 1.2, INK, "mm", True)
 box(134, 84 + y0, 198, 100 + y0, [L("真空管プリの音質改善 (VER7)", 1.3, True),
-    L("V1 の負荷を 47k 抵抗 → 定電流源 CCS 3mA (利得↑・歪み↓)、V2 のカソード負荷も CCS 5mA", 1.0),
+    L("V1 の負荷を 47k 抵抗 → 定電流源 CCS 3mA (利得 10→14 倍)、R4 は 3.3k、V2 のカソード負荷も CCS 5mA", 1.0),
     L("Anode load of V1 changed from a 47k resistor to a 3 mA current source (more gain, less distortion); the V2 cathode load is a 5 mA source.", 0.95),
     L("結合 C はポリプロピレン、ヒーター 6.3V DC ソフトスタート、B+ は容量倍増 + 遅延投入", 1.0)], PWR)
 # ------------------------------------------------------------ analog-input class D (lower half)
 text(3, 89, "クラス D パワー段 (半導体・アナログ入力・自己発振 / Eigentakt 型)  Analog-input self-oscillating Class D power stage", 1.5, ANA, "la", True)
 line([(128, 50 + y0 - 1.6), (128, 93)], ANA)
 line([(128, 93), (6, 93)], ANA)
-arrow([(6, 93), (6, 56)], ANA)
+arrow([(6, 93), (6, 72)], ANA)
+box(1, 60, 11, 72, [L("U0", 1.0, True), L("×7", 0.9), L("OPA", 0.7)], ANA)
+line([(6, 60), (6, 53.25)], ANA)
 text(131, 100, "→ クラス D へ (配線は短く)", 1.0, GRY, "lm")
 res(14, 53.25, "Rin", "10k 0.1%", ANA)
-line([(6, 56), (6, 53.25), (10, 53.25)], ANA)
+line([(6, 53.25), (10, 53.25)], ANA)
 plus_pin, minus_pin, out_pin = opamp(34, 50, "U1", "OPA1612", plus_top=False)
 line([(18, 53.25), (minus_pin[0], minus_pin[1])], ANA)
 line([(plus_pin[0], plus_pin[1]), (plus_pin[0] - 3, plus_pin[1]), (plus_pin[0] - 3, plus_pin[1] - 3)], ANA)
 gnd(plus_pin[0] - 3, plus_pin[1] - 3)
 line([(minus_pin[0], minus_pin[1]), (minus_pin[0], 61), (out_pin[0] + 4, 61), (out_pin[0] + 4, 50)], ANA)
-hcap(34, 61, "Cint", "220p C0G", ANA)
+hcap(34, 61, "Cint", "10p C0G", ANA)
 box(46, 40, 70, 60, [L("コンパレータ", 1.1, True), L("+ 自己発振 ~500kHz", 0.95), L("(出力から直接帰還)", 0.9)], ANA)
 line([out_pin, (46, 50)], ANA)
 box(74, 40, 92, 60, [L("ゲート", 1.1, True), L("ドライバ", 1.1, True), L("デッドタイム最小", 0.85)], ANA)
@@ -130,7 +132,7 @@ text(100, 76, "フィードバック (出力から直接) Rfb 22k 0.1%", 1.0, GR
 box(2, 2, 100, 16, [L("クラス D の音質改善 (VER7)", 1.25, True),
     L("0.1% 薄膜の入力・帰還抵抗、積分コンデンサは C0G、ゲートドライバとフィルタは出力端子のすぐ隣、スイッチングの帰り道を最短に", 0.95),
     L("Thin-film 0.1% resistors, a C0G integrator capacitor, the gate driver and filter right next to the terminals, and the shortest switching return path.", 0.9),
-    L("ゾベル (Rz/Cz) で 16Ω のピークを抑える。電源は外付けリニア DC (R コア)", 0.95)], ANA)
+    L("ゾベル (Rz/Cz) で 16Ω のピークを抑える。U0 ×7 と Rfb/Rin で約 15 倍 (1.9Vrms で 100W)。電源は外付けリニア DC", 0.95)], ANA)
 box(104, 2, 198, 16, [L("配線を短く・耐久 (VER7)", 1.25, True),
     L("プリ → パワーの信号経路 約 40mm、グランド面、0.1µF は 2mm 以内、DC ケーブル 6mm² 0.8m、電解 63V・別筐体", 0.95),
     L("Signal path about 40 mm, ground plane, 0.1 µF within 2 mm, a 6 mm2 0.8 m DC cable and 63 V electrolytics in a separate case.", 0.9)], PWR)

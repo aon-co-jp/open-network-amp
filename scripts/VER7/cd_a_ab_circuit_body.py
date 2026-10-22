@@ -4,7 +4,7 @@ def flag(x, y, t, col=INK):
 
 
 text(3, 127, "VER7 A級+AB級 パワーアンプ — 回路図 (音質改善・描き直し)  Class A + AB power amplifier, redrawn", 2.4, INK, "la", True)
-text(3, 123.6, "1ch分  |  差動入力段 + カスコード VAS + Vbe倍率 (高バイアス 750mA/素子) + 2段エミッタフォロワ出力 (2並列)  |  DCサーボ  |  全体帰還", 1.45, GRY)
+text(3, 123.6, "1ch分  |  差動入力段 + カスコード VAS + Vbe倍率 (高バイアス 750mA (出力の片側の合計)) + 2段エミッタフォロワ出力 (2並列)  |  DCサーボ  |  全体帰還", 1.45, GRY)
 text(3, 121.2, "参考設計 Reference design  |  値は机上計算。シミュレーション・実機測定は未実施 (Values are on paper only).  電源は外付けリニアDC電源 ±45V.", 1.2, GRY)
 
 # input
@@ -20,7 +20,7 @@ d.line([*P(18.2, 41.8), *P(21.8, 41.8)], fill=ANA, width=LW)
 line([(20, 41.8), (20, 40)], ANA)
 gnd(20, 40)
 text(17.5, 42.5, "100p C0G (RFI)", 1.0, GRY, "rm")
-box(24, 30, 48, 54, [L("入力段", 1.2, True), L("差動対 Q1/Q2", 1.05), L("2SC2240 ペア", 1.0), L("+ カレントミラー", 1.05), L("テイル電流 2mA", 1.0)], ANA)
+box(24, 30, 48, 54, [L("入力段", 1.2, True), L("差動対 Q1/Q2", 1.05), L("2SC2240 ペア", 1.0), L("+ カレントミラー", 1.05), L("テイル電流 2mA・各 22Ω", 1.0)], ANA)
 text(25.5, 48, "+", 1.5, ANA, "lm", True)
 text(25.5, 36, "−", 1.5, ANA, "lm", True)
 # feedback network
@@ -90,7 +90,7 @@ dot(116.6, 66, ANA)
 flag(116.6, 70, "FB", ANA)
 box(128, 88, 198, 116, [L("設計メモ Design notes", 1.4, True), L("出力 ≈ 100W / 8Ω (±45V)、9W まで A級、超えると自動で AB級 (切替不要)", 1.1),
   L("Q4 を出力段ヒートシンクに取り付け、温度変化に追従してバイアスを保つ", 1.05),
-  L("Class A up to 9 W, then automatically Class AB, up to 100 W / 8 ohm. Idle 750 mA per device.", 1.05),
+  L("Class A up to 9 W, then automatically Class AB, up to 100 W / 8 ohm. Idle 750 mA per output side (two devices in parallel).", 1.05),
   L("Mount Q4 on the output heatsink so the bias follows temperature.", 1.05),
   L("改善: カスコード VAS (Q9)・DC サーボ・RFI フィルタ・0.1% 薄膜・Cdom C0G・Q4 はヒートシンクへ熱結合", 1.0), L("耐久: 出力素子 2 並列 (4Ω でも接合部 ≈91°C)、ヒートシンク 90°C で温度保護", 1.0)], ANA)
 text(4, 14.0, "Q9: カスコード (2SC3503)  Q1/Q2: 2SC2240  Q3: 2SC3503  Q4: BD139  Q5: 2SC5171  Q6: 2SA1930  Q7: 2SC5200  Q8: 2SA1943 (各 ×2 並列)  Rz/Cz: ゾベル  L1//R: 出力コイル  K1: DC保護リレー", 1.15, INK)

@@ -19,7 +19,12 @@ B = {
 }
 B["en-GB"] = B["en"]
 IT["B"] = B
-FIGS = {  # file -> (title key text, items)
+bx = {}
+exec(open(SD + "/v7b_texts.py", encoding="utf-8").read().replace('if __name__ == "__main__":', 'if False:'), bx)
+for k in bx["R"]:
+    IT["R" + k] = {L: (bx["R"][k][L] % bx["V"] if "%(" in bx["R"][k][L] else bx["R"][k][L]).replace("%%", "%") for L in LANG8}
+FIGS = {
+ "amp_ver7b_sim.jpg": ("追加の仮想シミュレーション TEST 6-10 / Additional simulation", ["R1", "R2", "R3", "R4", "R5", "R6"]),  # file -> (title key text, items)
  "amp_ver7_classA.jpg": ("A級 / Class A", ["need", "A", "V", "C", "N"]),
  "amp_ver7_classA_AB.jpg": ("A級+AB級 / Class A + AB", ["need", "H", "C", "N"]),
  "amp_ver7_classAB.jpg": ("AB級 / Class AB", ["need", "B", "C", "N"]),
