@@ -139,6 +139,7 @@ Languages: [日本語](#ja) · [English](#en) · [Deutsch](#de) · [Русски
 - Surround AV amplifier: see the new repository [open-av-amp](https://github.com/aon-co-jp/open-av-amp)
 - [VER7](VER7) — quiet-to-practical volume for a 12-tatami room: Class A (9 W) and tube versions, Class A + AB version (automatic), improved analog Class D; manual in 8 languages (JA, EN-US, EN-UK, RU, UK, DE, IT, FR)
 - [headphone/HP-VER2](headphone/HP-VER2) — headphone amplifier on the front panel of every integrated amplifier and the AV amplifier: 3.5 / 4.4 / 6.35 mm and XLR (stereo 4-pin plus two mono 3-pin), with gain adjustment; 8-language explanation in each figure
+- [headphone/HP-VER3](headphone/HP-VER3) — gain control in 1 dB steps with three modes (ANALOG / DIGITAL / ANALOG + DIGITAL) and two independent controls, one for the speaker output and one for the headphone output; 8-language explanation in each figure
 - [classd-analog/CD-VER2](classd-analog/CD-VER2) — analog-input Class D amplifier with external linear DC supply, reviewed for durability, sound and shorter wiring (CD-VER1 = VER6 Class D figure)
 
 Each VER folder contains `streaming-amp`, `analog-amp` and `mono-sub-out` (JPG + PDF).
