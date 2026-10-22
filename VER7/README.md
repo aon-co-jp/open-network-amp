@@ -1,6 +1,6 @@
 # VER7 — VER7 — 小音量から実用音量まで: A級版・真空管版、A級+AB級版、改良クラスDアナログ版
 
-Figures: `amp_ver7_sim.jpg` (test / debug, 5 rounds), `amp_ver7_classA_AB.jpg` (Class A + AB), `amp_ver7_classA.jpg` (Class A), `manual-v7.jpg` / `manual-v7.pdf` (8-language manual), `amp_ver7_all.pdf`. The tube version uses `../VER6/amp_ver6_tube.jpg`; the improved Class D uses `../classd-analog/CD-VER2` and `../VER6/amp_ver6_classD.jpg`.
+Figures: `amp_ver7_sim.jpg` (test / debug, 5 rounds), `amp_ver7_classA_AB.jpg` (Class A + AB), `amp_ver7_classA.jpg` (Class A), `manual-v7.jpg` / `manual-v7.pdf` (8-language manual), `amp_ver7_all.pdf`. `amp_ver7_tube.jpg` (tube version) and `amp_ver7_classD.jpg` (improved analog Class D; details in `../classd-analog/CD-VER2`).
 
 ## 日本語
 
