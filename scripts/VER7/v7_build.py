@@ -14,7 +14,7 @@ v = {
 }
 IT = items(v)
 # add British English (en-GB): the existing "en" becomes US English
-GB = [("ground plane", "earth plane"), ("Ground", "Earth"), ("ground", "earth"), ("heatsink", "heat sink"), ("energy", "electricity"), ("sub-board", "sub-board"), ("Class AB automatically", "Class AB automatically")]
+GB = [("analog", "analogue"), ("a ground plane", "an earth plane"), ("ground plane", "earth plane"), ("Ground", "Earth"), ("ground", "earth"), ("heatsink", "heat sink"), ("energy", "electricity"), ("sub-board", "sub-board"), ("Class AB automatically", "Class AB automatically")]
 def to_gb(t):
     for a, b in GB:
         t = t.replace(a, b)
@@ -25,6 +25,9 @@ TITLE["en-GB"] = to_gb(TITLE["en"]).replace("Class A and tube versions", "Class 
 INTRO["en-GB"] = to_gb(INTRO["en"])
 for k in IT:
     IT[k]["en-GB"] = to_gb(IT[k]["en"]).replace("the tube preamp", "the valve preamp").replace("The tube version", "The valve version").replace("tube version", "valve version")
+import re as _re
+def _dec(L, t):
+    return _re.sub(r"(?<=\d)\.(?=\d)", ",", t) if L in ("ru", "uk", "de", "it", "fr") else t
 OUT = SD + r"\v7out"
 os.makedirs(OUT, exist_ok=True)
 # README in 8 languages
@@ -34,7 +37,7 @@ for L in LANG8:
     md.append("**%s**\n" % TITLE[L])
     md.append(INTRO[L] + "\n")
     for k in ("need", "A", "H", "D", "C", "N"):
-        md.append("- " + IT[k][L])
+        md.append("- " + _dec(L, IT[k][L]))
     md.append("")
 open(OUT + r"\README.md", "w", encoding="utf-8").write("\n".join(md))
 # manual image
@@ -57,7 +60,7 @@ def wrap(t, font, width):
 blocks = []
 for L in LANG8:
     lines = [(NAME8[L] + " — VER7", HD)]
-    for t in [TITLE[L], INTRO[L]] + [IT[k][L] for k in ("need", "A", "H", "D", "C", "N")]:
+    for t in [_dec(L, x) for x in [TITLE[L], INTRO[L]] + [IT[k][L] for k in ("need", "A", "H", "D", "C", "N")]]:
         for ln in wrap(t, REG, colw):
             lines.append((ln, REG))
         lines.append(("", REG))
