@@ -135,6 +135,7 @@ Languages: [日本語](#ja) · [English](#en) · [Deutsch](#de) · [Русски
 - [VER3](VER3) — sound-quality review, haptic hybrid volume, LR4 subwoofer
 - [VER4](VER4) — headphone amplifier (3.5 / 4.4 / 6.35 mm), ANALOG/DIGITAL gain
 - [VER5](VER5) — latest (toroidal dual-mono transformers): 4-language (JA/EN/DE/RU) text in the figures, durability review, manual (`VER5/manual`)
+- [VER6](VER6) — shorter wiring (45 mm path, ground plane, 2 mm decoupling) and a more durable hybrid volume knob (VER5 + delta)
 
 Each VER folder contains `streaming-amp`, `analog-amp` and `mono-sub-out` (JPG + PDF).
 Home page: https://audiocafe.tokyo/
