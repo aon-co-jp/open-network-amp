@@ -13,6 +13,7 @@ v = {
     "hd": 2 * g["pd_D"](avgw), "kd": g["kwh"](2 * g["pd_D"](avgw)),
 }
 IT = items(v)
+IT["V"] = {'ja': '真空管について: 真空管 (12AU7) は あくまでもプリアンプ段 (電圧増幅 + カソードフォロワ) として設計しています。パワー段は半導体の A級・AB級・A級+AB級で、真空管のパワーアンプ (出力トランス付き) は設計していません。', 'en': 'About the tube: the tube (12AU7) is designed purely as the preamplifier stage (voltage gain plus a cathode follower). The power stage is a solid-state Class A, Class AB or Class A + AB; no tube power amplifier (with an output transformer) is designed.', 'ru': 'О лампе: лампа (12AU7) разработана исключительно как каскад предусилителя (усиление напряжения плюс катодный повторитель). Оконечный каскад — полупроводниковый класса A, AB или A + AB; ламповый усилитель мощности (с выходным трансформатором) не разрабатывался.', 'uk': 'Про лампу: лампа (12AU7) розроблена виключно як каскад попереднього підсилювача (підсилення напруги плюс катодний повторювач). Кінцевий каскад — напівпровідниковий класу A, AB або A + AB; ламповий підсилювач потужності (з вихідним трансформатором) не розроблявся.', 'de': 'Zur Röhre: Die Röhre (12AU7) ist ausschließlich als Vorverstärkerstufe (Spannungsverstärkung plus Kathodenfolger) ausgelegt. Die Endstufe ist ein Halbleiter in Klasse A, Klasse AB oder Klasse A plus AB; ein Röhren-Endverstärker (mit Ausgangsübertrager) wurde nicht entworfen.', 'it': "Sulla valvola: la valvola (12AU7) è progettata esclusivamente come stadio di preamplificazione (guadagno di tensione più inseguitore di catodo). Lo stadio finale è a stato solido in classe A, classe AB o classe A + AB; non è stato progettato alcun amplificatore di potenza a valvole (con trasformatore d'uscita).", 'fr': "À propos du tube : le tube (12AU7) est conçu uniquement comme étage de préamplification (gain en tension plus suiveur de cathode). L'étage de puissance est à semi-conducteurs en classe A, classe AB ou classe A + AB ; aucun amplificateur de puissance à tubes (avec transformateur de sortie) n'est conçu."}
 # add British English (en-GB): the existing "en" becomes US English
 GB = [("analog", "analogue"), ("a ground plane", "an earth plane"), ("ground plane", "earth plane"), ("Ground", "Earth"), ("ground", "earth"), ("heatsink", "heat sink"), ("energy", "electricity"), ("sub-board", "sub-board"), ("Class AB automatically", "Class AB automatically")]
 def to_gb(t):
@@ -36,7 +37,7 @@ for L in LANG8:
     md.append("## %s\n" % NAME8[L])
     md.append("**%s**\n" % TITLE[L])
     md.append(INTRO[L] + "\n")
-    for k in ("need", "A", "H", "D", "C", "N"):
+    for k in ("need", "A", "V", "H", "D", "C", "N"):
         md.append("- " + _dec(L, IT[k][L]))
     md.append("")
 open(OUT + r"\README.md", "w", encoding="utf-8").write("\n".join(md))
@@ -60,7 +61,7 @@ def wrap(t, font, width):
 blocks = []
 for L in LANG8:
     lines = [(NAME8[L] + " — VER7", HD)]
-    for t in [_dec(L, x) for x in [TITLE[L], INTRO[L]] + [IT[k][L] for k in ("need", "A", "H", "D", "C", "N")]]:
+    for t in [_dec(L, x) for x in [TITLE[L], INTRO[L]] + [IT[k][L] for k in ("need", "A", "V", "H", "D", "C", "N")]]:
         for ln in wrap(t, REG, colw):
             lines.append((ln, REG))
         lines.append(("", REG))
