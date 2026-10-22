@@ -1,5 +1,7 @@
 # VER4 — 説明 / Explanation
 
+> 注 / Note: この版の図 (JPG/PDF) は当時の記録のままで、旧表記の「平衡」(現在は「バランス」) を含むことがあります。最新は VER5・VER6 です。 / The figures of this version are kept as originally made and may contain the old wording 平衡 (now written バランス). The newest are VER5 and VER6.
+
 ## ストリーミング / Streaming amplifier (`streaming-amp`)
 
 ## 日本語

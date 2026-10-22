@@ -1,5 +1,7 @@
 # VER3 — 説明 / Explanation
 
+> 注 / Note: この版の図 (JPG/PDF) は当時の記録のままで、旧表記の「平衡」(現在は「バランス」) を含むことがあります。最新は VER5・VER6 です。 / The figures of this version are kept as originally made and may contain the old wording 平衡 (now written バランス). The newest are VER5 and VER6.
+
 > 注: VER3 の図(JPG/PDF)の中の説明は画像で、文字として読めませんでした。下は、VER1〜VER4 の説明を集約した最新(VER4)の文章です。後の版で加わった機能 (VER3 以降の触覚ボリューム、VER4 のヘッドホンアンプなど) は、この版には含まれないことがあります。
 > Note: the explanation inside the VER3 figures is part of the images and not machine-readable. Below is the consolidated text of VER4, the newest of the older versions; features added later (the haptic volume from VER3, the headphone amplifier of VER4) may not be part of this version.
 
