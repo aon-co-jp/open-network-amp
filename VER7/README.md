@@ -4,7 +4,7 @@
 
 Figures: `amp_ver7_sim.jpg` (test / debug, 5 rounds), `amp_ver7b_sim.jpg` (additional tests 6-10 on the redrawn circuits), `amp_ver7_classA.jpg` (Class A), `amp_ver7_classA_AB.jpg` (Class A + AB, automatic), `amp_ver7_classAB.jpg` (Class AB, 100 W), `amp_ver7_classD.jpg` (improved analog Class D; details in `../classd-analog/CD-VER2`), `amp_ver7_tube_AB.jpg` (valve preamp + Class AB), `amp_ver7_tube_A_AB.jpg` (valve preamp + Class A + AB), `amp_ver7_tube_D.jpg` (valve preamp + analog Class D), `amp_ver7_tube.jpg` (valve preamp + Class A), `manual-v7.jpg` / `manual-v7.pdf` (8-language manual), `amp_ver7_all.pdf`.
 
-> Each `amp_ver7_*.jpg` contains the schematic, the front-panel headphone amplifier strip (HP-VER2; speakers turn OFF automatically when headphones are plugged in) and the explanation in 8 languages; bare schematics are in `figures-only/`. 各 JPG は設計図・前面ヘッドホンアンプ (ヘッドホンを挿すとスピーカーは自動で OFF)・8 言語の説明が入っています。
+> Each `amp_ver7_*.jpg` contains the schematic, the front-panel headphone amplifier strip (HP-VER2; separate ON/OFF switches for the speaker, headphone and subwoofer outputs, see `headphone/HP-VER2/amp_sw.jpg`) and the explanation in 8 languages; bare schematics are in `figures-only/`. 各 JPG は設計図・前面ヘッドホンアンプ (スピーカー・ヘッドホン・サブウーファーの各 ON/OFF スイッチ付き)・8 言語の説明が入っています。
 
 ## 日本語
 

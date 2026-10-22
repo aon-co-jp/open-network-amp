@@ -40,7 +40,7 @@ def hp_strip(fn, W=3200):
     def arrow(x0, y, x1, c):
         d.line([x0, y, x1, y], fill=c, width=6)
         d.polygon([(x1, y), (x1 - 26, y - 14), (x1 - 26, y + 14)], fill=c)
-    box(60, 110, 760, 360, ["入力の分岐", SRC[fn].split(" / ")[0], SRC[fn].split(" / ")[1], "(挿すとスピーカー出力は自動で OFF)"], col)
+    box(60, 110, 760, 360, ["入力の分岐", SRC[fn].split(" / ")[0], SRC[fn].split(" / ")[1], "(スピーカー出力とは別の ON/OFF)"], col)
     arrow(760, 235, 840, col)
     box(840, 110, 1700, 360, ["HP-VER2 ヘッドホン段", "アナログゲイン 0 / +6 / +12 / +18 dB (リレー)", "またはデジタルゲイン (±0.5 dB)", "抵抗検出 → ゲイン自動推奨", "電流バッファ (±0.5A×2)・出力 約 0.1Ω"], col)
     arrow(1700, 235, 1780, col)
@@ -51,7 +51,7 @@ def hp_strip(fn, W=3200):
         for li, part in enumerate(b.split("|")):
             d.text(((x0 + x1) // 2, 215 + li * 40), part, font=f3, fill=(60, 60, 60), anchor="ma")
     d.text((1780, 372), "前面のジャック: ジャック検出・起動/停止ミュート・DC 保護", font=f3, fill=grey)
-    d.text((60, 440), "電源: ヘッドホン専用 LDO ±15V (LT3045 / LT3094) を外付けリニア電源の専用巻線から。SW7 = ANALOG / DIGITAL ゲイン。ヘッドホンを挿すとスピーカー出力は自動で OFF、抜くと復帰。", font=f2, fill=ink)
-    d.text((60, 492), "Power: dedicated LDO +-15 V from a winding of the external linear supply. SW7 = analog / digital gain. Plugging in headphones turns the speaker outputs OFF automatically; unplugging restores them.", font=f3, fill=grey)
+    d.text((60, 440), "電源: ヘッドホン専用 LDO ±15V (LT3045 / LT3094) を外付けリニア電源の専用巻線から。SW7 = ANALOG / DIGITAL ゲイン。前面にスピーカー用・ヘッドホン用・サブウーファー用の ON/OFF スイッチ (独立)。", font=f2, fill=ink)
+    d.text((60, 492), "Power: dedicated LDO +-15 V from a winding of the external linear supply. SW7 = analog / digital gain. Separate front-panel ON / OFF switches for the speaker, headphone and subwoofer outputs.", font=f3, fill=grey)
     d.text((60, 540), "詳細・仮想シミュレーション: headphone/HP-VER2 (open-network-amp)  /  Details and simulation: headphone/HP-VER2. 真空管はプリ段のみ、ヘッドホン段は半導体 / the valve is the preamp stage only.", font=f3, fill=grey)
     return im
