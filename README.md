@@ -137,6 +137,7 @@ Languages: [日本語](#ja) · [English](#en) · [Deutsch](#de) · [Русски
 - [VER5](VER5) — latest (toroidal dual-mono transformers): 4-language (JA/EN/DE/RU) text in the figures, durability review, manual (`VER5/manual`)
 - [VER6](VER6) — shorter wiring (45 mm path, ground plane, 2 mm decoupling) and a more durable hybrid volume knob (VER5 + delta)
 - Surround AV amplifier: see the new repository [open-av-amp](https://github.com/aon-co-jp/open-av-amp)
+- [VER8](VER8) — VER7 plus the power input: 100-240 V auto-ranging, 50/60 Hz, device recognition over the power line at connection time only, 120 Hz only when both sides support it, optional 20 A connector (design proposal, 8-language explanation)
 - [VER7](VER7) — quiet-to-practical volume for a 12-tatami room: Class A (9 W) and tube versions, Class A + AB version (automatic), improved analog Class D; manual in 8 languages (JA, EN-US, EN-UK, RU, UK, DE, IT, FR)
 - [headphone/HP-VER2](headphone/HP-VER2) — headphone amplifier on the front panel of every integrated amplifier and the AV amplifier: 3.5 / 4.4 / 6.35 mm and XLR (stereo 4-pin plus two mono 3-pin), with gain adjustment; 8-language explanation in each figure
 - [headphone/HP-VER3](headphone/HP-VER3) — gain control in 1 dB steps with three modes (ANALOG / DIGITAL / ANALOG + DIGITAL) and two independent controls, one for the speaker output and one for the headphone output; 8-language explanation in each figure
