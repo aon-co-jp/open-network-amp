@@ -23,7 +23,7 @@ Languages: [日本語](#ja) · [English](#en) · [Deutsch](#de) · [Русски
 - 入力: RCA / XLR (アナログ)、USB-C、I2S、LAN / Wi-Fi、Bluetooth。出力: スピーカー (バイワイヤ対応 HF / LF)、PRE OUT (RCA + XLR)、SUB OUT (モノラル RCA + XLR)、ヘッドホン 3.5mm (バランス / アンバランス兼用)・4.4mm (バランス)・6.35mm (アンバランス)、HDMI / USB-C 映像出力。
 
 #### 5. 使い方
-- 音量: ノブを回します。SW6 が ON ならクリック 1 回 = 1 dB のクリック感、OFF なら滑らかです。ゲイン調整は SW7 で ANALOG (ビットパーフェクトを保つ) か DIGITAL (FPGA のデジタルゲイン) を選びます。どちらも、スピーカーとヘッドホンに同時に効きます。
+- 音量: ノブを回します。SW6 が ON ならクリック 1 回 = 0.5 dB のクリック感、OFF なら 0.01 dB 刻みの滑らかさです(詳細は [VOLUME-STEP-SPEC.md](VOLUME-STEP-SPEC.md))。ゲイン調整は SW7 で ANALOG (ビットパーフェクトを保つ) か DIGITAL (FPGA のデジタルゲイン) を選びます。どちらも、スピーカーとヘッドホンに同時に効きます。
 - ヘッドホン: 3 つのジャックのどれかに挿します (3.5mm は TRRS = バランス、TRS = アンバランスを自動検出)。ゲインは 0 / +6 / +12 / +18 dB。
 - サブウーファー: SUB OUT をサブウーファーの入力へつなぎ、SW3 でカットオフを、SW4 と SW2 / VR2 でメインスピーカーとの合成が平坦になるよう位相を合わせます。メインが 24 dB/oct (LR4) なら SW4 を 24 dB にします。
 
@@ -53,7 +53,7 @@ Languages: [日本語](#ja) · [English](#en) · [Deutsch](#de) · [Русски
 - Inputs: RCA / XLR (analog), USB-C, I2S, LAN / Wi-Fi, Bluetooth. Outputs: speakers (bi-wire HF / LF), PRE OUT (RCA + XLR), SUB OUT (mono RCA + XLR), headphones 3.5 mm (balanced and unbalanced), 4.4 mm (balanced), 6.35 mm (unbalanced), and HDMI / USB-C video output.
 
 #### 5. How to use
-- Volume: turn the knob. With SW6 ON each click is 1 dB with a click feel; OFF is smooth. SW7 selects the gain mode, ANALOG (keeps bit-perfect) or DIGITAL (digital gain in the FPGA). Both act on the speakers and the headphones at the same time.
+- Volume: turn the knob. With SW6 ON each click is 0.5 dB with a click feel; OFF is smooth in 0.01 dB steps (see [VOLUME-STEP-SPEC.md](VOLUME-STEP-SPEC.md)). SW7 selects the gain mode, ANALOG (keeps bit-perfect) or DIGITAL (digital gain in the FPGA). Both act on the speakers and the headphones at the same time.
 - Headphones: plug into any of the three jacks (the 3.5 mm jack detects TRRS = balanced and TRS = unbalanced automatically). Gain steps are 0 / +6 / +12 / +18 dB.
 - Subwoofer: connect SUB OUT to the subwoofer input, set the cutoff with SW3, and use SW4 and SW2 / VR2 to make the sum with the main speakers flat. If the main speaker is 24 dB/oct (LR4), set SW4 to 24 dB.
 
@@ -83,7 +83,7 @@ Languages: [日本語](#ja) · [English](#en) · [Deutsch](#de) · [Русски
 - Eingänge: RCA / XLR (analog), USB-C, I2S, LAN / Wi-Fi, Bluetooth. Ausgänge: Lautsprecher (Bi-Wiring HF / LF), PRE OUT (RCA + XLR), SUB OUT (Mono-RCA + XLR), Kopfhörer 3,5 mm (symmetrisch und unsymmetrisch), 4,4 mm (symmetrisch), 6,35 mm (unsymmetrisch) sowie HDMI- / USB-C-Videoausgang.
 
 #### 5. Bedienung
-- Lautstärke: Knopf drehen. Mit SW6 EIN hat jede Raste 1 dB mit Rastgefühl, AUS läuft der Knopf sanft. SW7 wählt ANALOG (bleibt Bit-perfekt) oder DIGITAL (digitale Verstärkung im FPGA). Beides wirkt gleichzeitig auf Lautsprecher und Kopfhörer.
+- Lautstärke: Knopf drehen. Mit SW6 EIN hat jede Raste 0,5 dB mit Rastgefühl, AUS läuft der Knopf sanft in 0,01-dB-Schritten (siehe [VOLUME-STEP-SPEC.md](VOLUME-STEP-SPEC.md)). SW7 wählt ANALOG (bleibt Bit-perfekt) oder DIGITAL (digitale Verstärkung im FPGA). Beides wirkt gleichzeitig auf Lautsprecher und Kopfhörer.
 - Kopfhörer: in eine der drei Buchsen stecken (die 3,5-mm-Buchse erkennt TRRS = symmetrisch und TRS = unsymmetrisch automatisch). Verstärkungsstufen: 0 / +6 / +12 / +18 dB.
 - Subwoofer: SUB OUT mit dem Subwoofer-Eingang verbinden, mit SW3 die Trennfrequenz wählen und mit SW4 sowie SW2 / VR2 die Summe mit den Hauptlautsprechern glätten. Ist der Hauptlautsprecher 24 dB/Okt (LR4), SW4 auf 24 dB stellen.
 
@@ -113,7 +113,7 @@ Languages: [日本語](#ja) · [English](#en) · [Deutsch](#de) · [Русски
 - Входы: RCA / XLR (аналоговые), USB-C, I2S, LAN / Wi-Fi, Bluetooth. Выходы: колонки (bi-wiring HF / LF), PRE OUT (RCA + XLR), SUB OUT (моно RCA + XLR), наушники 3,5 мм (балансный и несимметричный), 4,4 мм (балансный), 6,35 мм (несимметричный), а также видеовыход HDMI / USB-C.
 
 #### 5. Использование
-- Громкость: вращайте ручку. При SW6 ВКЛ каждый щелчок равен 1 дБ, при ВЫКЛ ход плавный. SW7 выбирает АНАЛОГОВЫЙ режим (сохраняет бит-в-бит) или ЦИФРОВОЙ (цифровое усиление в FPGA). Оба действуют на колонки и наушники одновременно.
+- Громкость: вращайте ручку. При SW6 ВКЛ каждый щелчок равен 0,5 дБ, при ВЫКЛ ход плавный с шагом 0,01 дБ (см. [VOLUME-STEP-SPEC.md](VOLUME-STEP-SPEC.md)). SW7 выбирает АНАЛОГОВЫЙ режим (сохраняет бит-в-бит) или ЦИФРОВОЙ (цифровое усиление в FPGA). Оба действуют на колонки и наушники одновременно.
 - Наушники: подключите к любому из трёх разъёмов (разъём 3,5 мм сам определяет TRRS = балансный и TRS = несимметричный). Ступени усиления: 0 / +6 / +12 / +18 дБ.
 - Сабвуфер: соедините SUB OUT со входом сабвуфера, задайте частоту среза переключателем SW3 и с помощью SW4 и SW2 / VR2 добейтесь ровной суммы с основными колонками. Если основная колонка работает с 24 дБ/окт (LR4), поставьте SW4 на 24 дБ.
 
