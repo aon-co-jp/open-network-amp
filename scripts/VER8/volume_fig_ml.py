@@ -7,7 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 import arabic_reshaper
 from bidi.algorithm import get_display
 LANGS = ["ja","en","de","ru","uk","it","fr","es","ar","fa"]
-NAMES = {"ja":"日本語","en":"English","de":"Deutsch","ru":"Русский","uk":"Українська","it":"Italiano","fr":"Français","es":"Español","ar":"العربية","fa":"فارسی"}
+NAMES = {"ja":"日本語","en":"English","de":"Deutsch","ru":"Русский","uk":"Українська","it":"Italiano","fr":"Français","es":"Español","ar":"العربية","fa":"イラン（ペルシャ）/ Iran (Persia)"}
 Z0 = 200.0
 def tpad(a, z0=Z0):
     k = 10 ** (a / 20); return z0 * (k - 1) / (k + 1), 2 * z0 * k / (k * k - 1)

@@ -5,7 +5,7 @@ Default view = Japanese + English together; the selector offers each of the 10 l
 Texts were written by an AI and are NOT checked by native speakers."""
 import re, sys, html
 LANGS = [("ja","日本語"),("en","English"),("de","Deutsch"),("ru","Русский"),("uk","Українська"),
-         ("it","Italiano"),("fr","Français"),("es","Español"),("ar","العربية"),("fa","فارسی")]
+         ("it","Italiano"),("fr","Français"),("es","Español"),("ar","العربية"),("fa","イラン（ペルシャ）/ Iran (Persia) — فارسی")]
 T = {
 "ja": dict(
  title="ハイブリッド音量: クリック式 0.5dB 刻み ⇄ 滑らか式 0.01dB 刻み",
