@@ -1,0 +1,16 @@
+== ladder emulation: worst case of 200 random 0.1%% resistor sets, contact resistance 0.05 ohm ==
+kind     Z0     Zs/ZL(ohm)   max err(dB)  max step err(dB)  nonmono  noise(uV,20kHz)  SNR@-60dB(2Vrms in)
+binary8         200  matched        0.028        0.028            0      0.258          71.8
+binary8         600  matched        0.028        0.028            0      0.446          67.0
+binary8        1000  matched        0.028        0.028            0      0.576          64.8
+binary8       10000  matched        0.028        0.028            0      1.821          54.8
+fine5+16dBx5    200  matched        0.030        0.017            0      0.258          71.8
+fine5+16dBx5    600  matched        0.030        0.017            0      0.446          67.0
+fine5+16dBx5   1000  matched        0.030        0.017            0      0.576          64.8
+fine5+16dBx5  10000  matched        0.030        0.017            0      1.821          54.8
+== termination mismatch (fine5+16dBx5, Z0=600, no tolerance): source 50 ohm / load 100 kohm ==
+max err 5.278 dB, max step err 0.441 dB
+== with a stored error table (0.01 dB resolution), fine5+16dBx5, Z0=600, 0.1%% ==
+residual max err 0.0050 dB, step 0.0100 dB
+== 32-bit digital trim, 24-bit full-scale sine in a 32-bit word, -0.17 dB ==
+trim quantisation noise: 194.5 dB below the signal (24-bit source quantisation is about 146 dB below full scale)

@@ -98,11 +98,17 @@ T = {
  note="وضعیت: پیشنهاد طراحی (فقط محاسبه) و بدون اندازه‌گیری روی سخت‌افزار. متن داخل تصویر ژاپنی است. ترجمه‌ها را هوش مصنوعی نوشته و گویشوران بومی بررسی نکرده‌اند.",
  av="آمپلی‌فایر AV: هر ۱۲ کانال (۱۱ کانال برای 11.2.4 به‌علاوهٔ یک کانال ذخیره) تفاضلی می‌مانند، هر کانال و شاخه همان نردبان را دارد و یک دستگیره همه را با هم کنترل می‌کند. این یعنی ۱۲ کانال × ۲ شاخه × ۸ = ۱۹۲ رله؛ فضای برد، هزینه و هم‌گامی کانال‌ها بررسی نشده است."),
 }
+import volume_fig_ml as FG
+for _l in T:                                   # revised design: reuse the figure texts so page and figure agree
+    g = FG.T[_l]
+    T[_l]["ladder"] = g["lad"] + " " + g["chg"][1]
+    T[_l]["emu"] = g["emu"][0] + ": " + " / ".join(g["emu"][1:])
+    T[_l]["av"] = g["av"]
 COMMA = {"de","ru","uk","it","fr","es"}
 def fix(l, s): return re.sub(r"(?<=\d)\.(?=\d)", ",", s) if l in COMMA else s
 def build(kind, out, img):
     name = "SV-VER11" if kind == "sv11" else "VER8"
-    keys = ["intro","click","smooth","sw5","ladder"] + (["av"] if kind=="sv11" else []) + ["note"]
+    keys = ["intro","click","smooth","sw5","ladder","emu"] + (["av"] if kind=="sv11" else []) + ["note"]
     secs = []
     for l, nm in LANGS:
         d = T[l]; rtl = ' dir="rtl"' if l in ("ar","fa") else ""
@@ -115,11 +121,12 @@ def build(kind, out, img):
 body{margin:0 auto;max-width:1100px;padding:16px;background:var(--bg);color:var(--fg);font:16px/1.7 system-ui,"Meiryo",sans-serif}
 img{max-width:100%%;height:auto;border:1px solid #8884}select{font-size:1.1rem;padding:.3rem}h2{font-size:1.25rem}p{margin:.6rem 0}section{margin-top:1rem}</style></head><body>
 <p><label>Language / 言語: <select id="sel">%(o)s</select></label></p>
-<p><img src="%(i)s" alt="%(n)s hybrid volume schematic"></p>
+<p><img id="fig" data-base="%(k)s-volume-" alt="%(n)s hybrid volume schematic"></p>
+<p><a id="dl1" href="#">JPG</a> · <a href="%(k)s-volume-10lang.pdf">PDF (10 languages)</a></p>
 %(s)s
 <script>(function(){var s=document.getElementById('sel');
-function show(v){var on=v==='default'?['ja','en']:[v];document.querySelectorAll('section').forEach(function(e){e.hidden=on.indexOf(e.id)<0});s.value=v;try{localStorage.setItem('vollang',v)}catch(e){}}
-var v='default';try{v=localStorage.getItem('vollang')||'default'}catch(e){}if(v!=='default'&&!document.getElementById(v))v='default';show(v);s.onchange=function(){show(s.value)}})();</script></body></html>""" % dict(n=name, o=opts, i=img, s="\n".join(secs))
+function show(v){var on=v==='default'?['ja','en']:[v];document.querySelectorAll('section').forEach(function(e){e.hidden=on.indexOf(e.id)<0});s.value=v;var fl=v==='default'?'ja':v,im=document.getElementById('fig');im.src=im.dataset.base+fl+'.jpg';var a=document.getElementById('dl1');a.href=im.src;a.textContent='JPG ('+fl+')';try{localStorage.setItem('vollang',v)}catch(e){}}
+var v='default';try{v=localStorage.getItem('vollang')||'default'}catch(e){}if(v!=='default'&&!document.getElementById(v))v='default';show(v);s.onchange=function(){show(s.value)}})();</script></body></html>""" % dict(n=name, o=opts, i=img, k=kind, s="\n".join(secs))
     open(out, "w", encoding="utf-8").write(page)
 if __name__ == "__main__":
     build(sys.argv[1], sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else "volume_hybrid.jpg")

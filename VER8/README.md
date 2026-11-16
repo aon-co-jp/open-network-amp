@@ -93,3 +93,10 @@ Figures: `power_input.jpg` (the diagram with the 8-language explanation below it
 
 `volume_hybrid.jpg`: クリック式 0.5dB 刻み (モーターのクリック感) と、SW6 で切替える滑らかな 0.01dB 刻みのハイブリッド音量の回路図 (設計案・計算のみ)。仕様は [VOLUME-STEP-SPEC.md](../VOLUME-STEP-SPEC.md)、作図は `scripts/VER8/run_volume.py`。
 `volume_hybrid.jpg`: hybrid volume, clicky 0.5 dB steps with motor feel, or smooth 0.01 dB steps via SW6 (design proposal, calculation only). Spec: VOLUME-STEP-SPEC.md; script: `scripts/VER8/run_volume.py`.
+
+
+## 音質エミュレーターの結果と見直し (2026-11-16) / Sound-quality emulator review
+- 回路図 (10 言語、JPG と PDF): `ver8-volume-<言語>.jpg`、`ver8-volume-10lang.pdf`、解説ページ `volume.html`。Figures in 10 languages (JPG and PDF) and the explanation page `volume.html`.
+- エミュレーター (Python の計算、実機測定ではありません): `scripts/.../volume_sim.py`、結果 `volume_sim_result.txt`。The emulator is a Python calculation, not a bench measurement.
+- 見直し: 旧案の 2 進 8 セル (64dB の分路抵抗が約 0.25Ω で非現実的) を、微調整 5 セル + 16dB×5 (最小 65Ω) へ。入出力をバッファして Z0=200Ω で整合 (不整合 50Ω/100kΩ では最大 5.3dB ずれる)。工場で 181 位置の誤差を測り、テーブルで補正 (±0.005dB)。Old binary 8 cells (a 64 dB shunt of about 0.25 ohm) replaced by 5 fine cells + 5 x 16 dB (smallest 65 ohm); buffered and matched at Z0 = 200 ohm (a 50 ohm / 100 kohm mismatch is off by up to 5.3 dB); a factory error table corrects the 181 positions (±0.005 dB).
+- 限界: リレーの分路側の接触抵抗、切替時のグリッチ、実機の配線は未モデル。Not modelled: relay contact resistance in the shunt leg, switching glitches, real wiring.
