@@ -1,3 +1,5 @@
+> Latest translations / 翻訳の最新版: [0-LATEST-TRANSLATIONS.md](0-LATEST-TRANSLATIONS.md)
+
 # Integrated amplifier — VER5 (design files)
 Fully balanced and unbalanced integrated amplifiers with a haptic hybrid volume knob, DDC + DAC, headphone amplifier and dedicated mono subwoofer terminals (RCA + XLR).
 Reference designs only (Python calculations, not bench measurements). See https://audiocafe.tokyo/ for the figures, PDF and JPG files.
