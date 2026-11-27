@@ -1,3 +1,3 @@
 source: aon-co-jp/open-network-amp
-commit: 57996fa9404146a5166a0ae4ed2e21ac2dfb42fc
-updated: 2026-11-27T06:03:57Z
+commit: 93da1c143a76128f81f407023027337c73a3780b
+updated: 2026-11-27T06:05:08Z
